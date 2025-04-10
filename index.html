@@ -1,215 +1,184 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Te amo, amor de mi vida</title>
-
     <style>
-
         /* Estilo general de la página */
-
         body {
-
             background: linear-gradient(135deg, #f8d7da, #ffafcc); /* Fondo con gradiente suave */
-
             font-family: 'Arial', sans-serif;
-
             display: flex;
-
             justify-content: center;
-
             align-items: center;
-
             height: 100vh; /* Asegura que ocupe toda la pantalla */
-
             margin: 0;
-
             text-align: center;
-
             color: #333; /* Color de texto por defecto */
-
             overflow: hidden; /* Elimina cualquier barra de desplazamiento */
-
             flex-direction: column; /* Alinear los elementos en columna */
-
+            position: relative;
         }
-
-
 
         /* Contenedor general */
-
         .container {
-
-            width: 80%;
-
+            width: 90%;
             max-width: 1200px;
-
             display: flex;
-
             flex-direction: column;
-
             align-items: center;
-
+            z-index: 1; /* Asegura que el contenido esté por encima del confeti */
         }
-
-
 
         /* Título */
-
         h1 {
-
             font-size: 4rem;
-
             color: #d63384; /* Color romántico y llamativo */
-
             font-weight: bold;
-
             text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Sombra de texto */
-
             margin-bottom: 20px;
-
-            animation: fadeIn 2s ease-out; /* Animación de aparición */
-
+            animation: fadeIn 2s ease-out, glow 2s infinite alternate; /* Animación de aparición y brillo */
         }
-
-
 
         /* Texto del cumpleaños */
-
         .birthday-message {
-
             background-color: rgba(255, 223, 186, 0.5); /* Fondo semitransparente para destacar */
-
             padding: 20px;
-
             border-radius: 15px;
-
             margin: 20px 0;
-
             font-size: 1.2rem;
-
             color: #d63384;
-
             animation: fadeIn 3s ease-out; /* Animación de aparición */
-
+            max-width: 800px;
         }
-
-
 
         /* Lista de canciones */
-
         .songs {
-
             text-align: left;
-
             font-size: 1.2rem;
-
             margin-top: 20px;
-
             color: #333;
-
             animation: fadeIn 4s ease-out; /* Animación de aparición */
-
         }
-
-
 
         .songs a {
-
             color: #d63384;
-
             text-decoration: none;
-
+            font-weight: bold;
         }
-
-
 
         .songs a:hover {
-
             text-decoration: underline;
-
         }
 
+        /* Botón de música */
+        .music-button {
+            background-color: #d63384;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
 
+        .music-button:hover {
+            background-color: #ff1493;
+        }
 
         /* Animación de aparición */
-
         @keyframes fadeIn {
-
             0% {
-
                 opacity: 0;
-
                 transform: translateY(50px);
-
             }
-
             100% {
-
                 opacity: 1;
-
                 transform: translateY(0);
-
             }
-
         }
 
+        /* Animación de brillo */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #d63384, 0 0 20px #d63384, 0 0 30px #d63384;
+            }
+            100% {
+                text-shadow: 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493;
+            }
+        }
+
+        /* Confeti */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ffcc00;
+            top: -10px;
+            animation: fall 5s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
     </style>
-
 </head>
-
 <body>
-
     <div class="container">
-
         <!-- Título en el área azul -->
-
         <h1>Te amo, amor de mi vida</h1>
-
         
-
         <!-- Texto de cumpleaños en el área amarilla -->
-
         <div class="birthday-message">
-
             ¡Feliz cumpleaños, mi amor!<br><br>
-
             Hoy celebro la vida de la persona más increíble que tuve la fortuna de conocer. Cada día a tu lado es un regalo, pero hoy es especialmente especial porque es el día en que el mundo te vio nacer, y no puedo estar más agradecido por eso.<br><br>
-
             Tu sonrisa ilumina mis días, y tu amor me hace sentir la persona más afortunada del mundo. Sos mi inspiración, mi compañera, y mi razón de ser. Quiero que sepas que cada momento que paso con vos es un tesoro que valoro profundamente.<br><br>
-
             Hoy, deseo que todos tus sueños se hagan realidad, que recibas tanto amor como el que das, y que cada instante esté lleno de felicidad, risas y momentos inolvidables. Voy a estar a tu lado para hacer de este día algo tan especial como vos lo eres para mí.<br><br>
-
             Te amo con todo mi corazón. ¡Feliz cumpleaños, mi vida!
-
         </div>
-
         
-
+        <!-- Botón de música -->
+        <button class="music-button" onclick="playMusic()">🎵 Reproducir música</button>
+        
         <!-- Canciones que me recuerdan a vos en el área negra -->
-
         <div class="songs">
-
             <ul>
-
                 <li>Canciones que me recuerdan a vos: 
-
-                    <a href="#">Escuchar canciones</a>
-
+                    <a href="https://youtube.com/playlist?list=PLIiH_24dBK8UCr2KcxGT_7tYPVC983HHc&si=Jv-5kap9ZAjDGgjY" target="_blank">Escuchar canciones</a>
                 </li>
-
             </ul>
-
         </div>
-
     </div>
 
-</body>
+    <!-- Confeti -->
+    <div id="confetti-container"></div>
 
+    <script>
+        // Función para reproducir música
+        function playMusic() {
+            const audio = new Audio('ruta-a-tu-archivo-de-musica.mp3'); // Cambia la ruta al archivo de música
+            audio.play();
+            alert("🎶 Reproduciendo tu canción favorita...");
+        }
+
+        // Generar confeti
+        const confettiContainer = document.getElementById('confetti-container');
+        for (let i = 0; i < 100; i++) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = `${Math.random() * 100}vw`;
+            confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            confettiContainer.appendChild(confetti);
+        }
+    </script>
+</body>
 </html>
