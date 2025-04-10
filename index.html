@@ -1,28 +1,215 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Videos</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <title>Te amo, amor de mi vida</title>
+
+    <style>
+
+        /* Estilo general de la página */
+
+        body {
+
+            background: linear-gradient(135deg, #f8d7da, #ffafcc); /* Fondo con gradiente suave */
+
+            font-family: 'Arial', sans-serif;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            height: 100vh; /* Asegura que ocupe toda la pantalla */
+
+            margin: 0;
+
+            text-align: center;
+
+            color: #333; /* Color de texto por defecto */
+
+            overflow: hidden; /* Elimina cualquier barra de desplazamiento */
+
+            flex-direction: column; /* Alinear los elementos en columna */
+
+        }
+
+
+
+        /* Contenedor general */
+
+        .container {
+
+            width: 80%;
+
+            max-width: 1200px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+        }
+
+
+
+        /* Título */
+
+        h1 {
+
+            font-size: 4rem;
+
+            color: #d63384; /* Color romántico y llamativo */
+
+            font-weight: bold;
+
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Sombra de texto */
+
+            margin-bottom: 20px;
+
+            animation: fadeIn 2s ease-out; /* Animación de aparición */
+
+        }
+
+
+
+        /* Texto del cumpleaños */
+
+        .birthday-message {
+
+            background-color: rgba(255, 223, 186, 0.5); /* Fondo semitransparente para destacar */
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            margin: 20px 0;
+
+            font-size: 1.2rem;
+
+            color: #d63384;
+
+            animation: fadeIn 3s ease-out; /* Animación de aparición */
+
+        }
+
+
+
+        /* Lista de canciones */
+
+        .songs {
+
+            text-align: left;
+
+            font-size: 1.2rem;
+
+            margin-top: 20px;
+
+            color: #333;
+
+            animation: fadeIn 4s ease-out; /* Animación de aparición */
+
+        }
+
+
+
+        .songs a {
+
+            color: #d63384;
+
+            text-decoration: none;
+
+        }
+
+
+
+        .songs a:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+
+        /* Animación de aparición */
+
+        @keyframes fadeIn {
+
+            0% {
+
+                opacity: 0;
+
+                transform: translateY(50px);
+
+            }
+
+            100% {
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
 <body>
-    <div class="gallery">
-        <h1>Galería de Videos</h1>
-        <div class="video-container">
-            <video controls>
-                <source src="video1.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video.
-            </video>
-            <video controls>
-                <source src="video2.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video.
-            </video>
-            <video controls>
-                <source src="video3.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video.
-            </video>
+
+    <div class="container">
+
+        <!-- Título en el área azul -->
+
+        <h1>Te amo, amor de mi vida</h1>
+
+        
+
+        <!-- Texto de cumpleaños en el área amarilla -->
+
+        <div class="birthday-message">
+
+            ¡Feliz cumpleaños, mi amor!<br><br>
+
+            Hoy celebro la vida de la persona más increíble que tuve la fortuna de conocer. Cada día a tu lado es un regalo, pero hoy es especialmente especial porque es el día en que el mundo te vio nacer, y no puedo estar más agradecido por eso.<br><br>
+
+            Tu sonrisa ilumina mis días, y tu amor me hace sentir la persona más afortunada del mundo. Sos mi inspiración, mi compañera, y mi razón de ser. Quiero que sepas que cada momento que paso con vos es un tesoro que valoro profundamente.<br><br>
+
+            Hoy, deseo que todos tus sueños se hagan realidad, que recibas tanto amor como el que das, y que cada instante esté lleno de felicidad, risas y momentos inolvidables. Voy a estar a tu lado para hacer de este día algo tan especial como vos lo eres para mí.<br><br>
+
+            Te amo con todo mi corazón. ¡Feliz cumpleaños, mi vida!
+
         </div>
+
+        
+
+        <!-- Canciones que me recuerdan a vos en el área negra -->
+
+        <div class="songs">
+
+            <ul>
+
+                <li>Canciones que me recuerdan a vos: 
+
+                    <a href="#">Escuchar canciones</a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
     </div>
+
 </body>
+
 </html>
